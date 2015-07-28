@@ -5,6 +5,7 @@
  */
 ;
 (function ($) {
+  "use strict";
 
   //FlexSlider: Object Instance
   $.flexslider = function(el, options) {
@@ -26,8 +27,7 @@
         carousel = (slider.vars.itemWidth > 0),
         fade = slider.vars.animation === "fade",
         asNav = slider.vars.asNavFor !== "",
-        methods = {},
-        focused = true;
+        methods = {};
 
     // Store a reference to the slider object
     $.data(el, "flexslider", slider);
@@ -1085,6 +1085,7 @@
   };
 
   // Ensure the slider isn't focussed if the window loses focus.
+  var focused = true;
   $( window ).blur( function ( e ) {
     focused = false;
   }).focus( function ( e ) {
